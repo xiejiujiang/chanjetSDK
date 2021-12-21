@@ -8,6 +8,7 @@ import com.chanjet.openapi.sdk.java.response.CreateTenantResponse;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import sun.net.www.http.HttpClient;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,14 +27,21 @@ public class SdkTest {
             createTenantRequest.setAppSecret("EDA816AB3EF8696095C8890F574F5F3E");
             createTenantRequest.setRequestUri("/tplus/api/v2/warehouse/Query");
             createTenantRequest.setOpenToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NfdG9rZW4iOiJhNDNhOGU1Yi00NTQ0LTQxZTEtYTA3Mi01MzYwN2I1MGM5N2MiLCJzdWIiOiJpc3YiLCJhdWQiOiJpc3YiLCJuYmYiOjE2MzIyMzQzMjcsImFwcElkIjoiNTgiLCJzY29wZSI6ImF1dGhfYWxsIiwiaXNzIjoiY2hhbmpldCIsImV4cCI6MTYzMjc1MjcyNywidXNlcklkIjoiNjAwMTQzNjIxNTEiLCJpYXQiOjE2MzIyMzQzMjcsIm9yZ0lkIjoiMTIzMjgwNjUwMzQ5NzkwMSIsIm9yZ0FjY291bnQiOiJ1enVzanEyZ3JsZTcifQ.IdyID0KvRrECbX73yJMcDM0TZsvHeaFPyeUE8bCzx2M");
+            createTenantRequest.setContentType("application/json");
+
+            createTenantRequest.addQueryParam("body","param:{}");
 
             //设置header参数,接口如无appKey、appSecret、appSecret、Content-Type四个参数之外的请求头，则不需要传
             //createTenantRequest.addHeader("key", "value");
 
-            Map<String,String>  addQueryParam = new HashMap<String,String>();
-            addQueryParam.put("code","999");
+            //Map<String,String>  addQueryParam = new HashMap<String,String>();
+            //addQueryParam.put("Code","999");
+            //addQueryParam.put("queryParams","{}");
+
             //设置query参数,接口无query参数则不需要传
-            createTenantRequest.addQueryParams(addQueryParam);
+
+            //createTenantRequest.addQueryParams(addQueryParam);
+
 
             //设置业务参数对象
             //CreateTenantContent createTenantContent = new CreateTenantContent();
